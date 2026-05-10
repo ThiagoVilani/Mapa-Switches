@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mapa de Switches - Línea Roca</title>
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #map {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .popup-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .online {
+      color: green;
+      font-weight: bold;
+    }
+
+    .offline {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+
+  // =========================
+  // MAPA
+  // =========================
+
+  const map = L.map('map').setView([-34.706, -58.391], 10);
+
+  // OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(map);
+
+
+  // =========================
+  // DATOS
+  // =========================
+
+  const switches = [
+    {
+      nombre: "SW-CONSTITUCION-01",
+      lat: -34.6275,
+      lon: -58.3819,
+      ip: "10.0.0.1",
+      modelo: "Cisco 2960",
+      estado: "ONLINE",
+      estacion: "Constitución"
+    },
+
+    {
+      nombre: "SW-AVELLANEDA-02",
+      lat: -34.6633,
+      lon: -58.3647,
+      ip: "10.0.0.2",
+      modelo: "Cisco 2960",
+      estado: "OFFLINE",
+      estacion: "Avellaneda"
+    },
+
+    {
+      nombre: "SW-LOMAS-01",
+      lat: -34.7612,
+      lon: -58.4011,
+      ip: "10.0.0.3",
+      modelo: "Huawei S5720",
+      estado: "ONLINE",
+      estacion: "Lomas de Zamora"
+    },
+
+    {
+      nombre: "SW-TEMPERLEY-01",
+      lat: -34.7795,
+      lon: -58.3886,
+      ip: "10.0.0.4",
+      modelo: "Cisco 3750",
+      estado: "ONLINE",
+      estacion: "Temperley"
+    }
+  ];
+
+
+  // =========================
+  // ICONOS
+  // =========================
+
+  function crearColor(estado) {
+
+    let color = estado === "ONLINE" ? "green" : "red";
+
+    return L.divIcon({
+      className: '',
+      html: `
+        <div style="
+          width:18px;
+          height:18px;
+          border-radius:50%;
+          background:${color};
+          border:2px solid white;
+          box-shadow:0 0 5px rgba(0,0,0,0.5);
+        "></div>
+      `,
+      iconSize: [18,18]
+    });
+  }
+
+
+  // =========================
+  // MARCADORES
+  // =========================
+
+  switches.forEach(sw => {
+
+    const marker = L.marker(
+      [sw.lat, sw.lon],
+      { icon: crearColor(sw.estado) }
+    ).addTo(map);
+
+    marker.bindPopup(`
+      <div class="popup-title">${sw.nombre}</div>
+
+      <b>Estación:</b> ${sw.estacion}<br>
+      <b>IP:</b> ${sw.ip}<br>
+      <b>Modelo:</b> ${sw.modelo}<br>
+      <b>Estado:</b>
+
+      <span class="${sw.estado === 'ONLINE' ? 'online' : 'offline'}">
+        ${sw.estado}
+      </span>
+    `);
+  });
+
+</script>
+
+</body>
+</html>

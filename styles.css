@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* MAPA */
+
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* MARCADOR */
+
+.marker {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+/* POPUP */
+
+.popup h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    margin: 5px 0;
+}
+
+/* ESTADOS */
+
+.estado {
+    font-weight: bold;
+}
+
+.online {
+    color: green;
+}
+
+.offline {
+    color: red;
+}
+
+.warning {
+    color: orange;
+}

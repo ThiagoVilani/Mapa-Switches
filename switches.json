@@ -1,0 +1,79 @@
+[
+    {
+      "id": 1,
+      "nombre": "SW-CONSTITUCION-01",
+      "lat": -34.628655707522604,
+      "lon": -58.37977744787493,
+      "ip": "10.10.1.1",
+      "modelo": "Cisco 2960",
+      "estado": "ONLINE",
+      "estacion": "Constitución",
+      "sector": "Sala Técnica 1",
+      "ultimaRevision": "2026-05-01"
+    },
+  
+    {
+      "id": 2,
+      "nombre": "SW-AVELLANEDA-01",
+      "lat": -34.662130, 
+      "lon":  -58.376192,
+      "ip": "10.10.1.2",
+      "modelo": "Huawei S5720",
+      "estado": "OFFLINE",
+      "estacion": "Avellaneda",
+      "sector": "Andén 2",
+      "ultimaRevision": "2026-04-28"
+    },
+  
+    {
+      "id": 3,
+      "nombre": "SW-LANUS-CORE",
+      "lat": -34.70769985250861,
+      "lon": -58.390929344812314,
+      "ip": "10.10.1.3",
+      "modelo": "Cisco 3750X",
+      "estado": "ONLINE",
+      "estacion": "Lanús",
+      "sector": "Centro de Control",
+      "ultimaRevision": "2026-05-05"
+    },
+  
+    {
+      "id": 4,
+      "nombre": "SW-LOMAS-02",
+      "lat": -34.761008090108845, 
+      "lon": -58.39761646175678,
+      "ip": "10.10.1.4",
+      "modelo": "MikroTik CRS328",
+      "estado": "WARNING",
+      "estacion": "Lomas de Zamora",
+      "sector": "Gabinete Norte",
+      "ultimaRevision": "2026-04-30"
+    },
+  
+    {
+      "id": 5,
+      "nombre": "SW-TEMPERLEY-01",
+      "lat": -34.7795,
+      "lon": -58.3886,
+      "ip": "10.10.1.5",
+      "modelo": "Cisco 2960",
+      "estado": "ONLINE",
+      "estacion": "Temperley",
+      "sector": "Sala UPS",
+      "ultimaRevision": "2026-05-02"
+    },
+  
+    {
+      "id": 6,
+      "nombre": "SW-BANFIELD-03",
+      "lat": -34.7478,
+      "lon": -58.3932,
+      "ip": "10.10.1.6",
+      "modelo": "TP-Link JetStream",
+      "estado": "OFFLINE",
+      "estacion": "Banfield",
+      "sector": "Gabinete Oeste",
+      "ultimaRevision": "2026-03-20"
+    }
+  ]

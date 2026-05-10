@@ -1,0 +1,34 @@
+[
+    {
+      "origen": 1,
+      "destino": 2,
+      "tipo": "FIBRA",
+      "estado": "ONLINE"
+    },
+  
+    {
+      "origen": 2,
+      "destino": 3,
+      "tipo": "FIBRA",
+      "estado": "ONLINE"
+    },
+    {
+      "origen": 3,
+      "destino": 4,
+      "tipo": "FIBRA",
+      "estado": "ONLINE"
+    },
+  
+    {
+      "origen": 4,
+      "destino": 6,
+      "tipo": "FIBRA",
+      "estado": "ONLINE"
+    },
+    {
+      "origen": 6,
+      "destino": 5,
+      "tipo": "FIBRA",
+      "estado": "ONLINE"
+    }
+  ]
